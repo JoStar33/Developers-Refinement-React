@@ -3,7 +3,7 @@
 
 탄탄한 기본기가 좋은 개발자를 만든다.
 
-리액트 파트에서는 아래 훅들에 대해 공부하는 시간을 가진다.
+리액트 파트에서는 아래 훅들과 라이브러리에 대해 공부하는 시간을 가진다.
 - useCallback
 - useReducer
 - useContext
@@ -11,4 +11,5 @@
 - useImperativeHandle
 - forwardRef
 - callbackRef
-- 모빅스 사용기
+- 모빅스 구체적인 사용기
+- 아토믹 디자인 시스템 적용해보기
