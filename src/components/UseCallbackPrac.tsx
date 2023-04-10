@@ -8,8 +8,9 @@ const UseCallbackPrac = () => {
   const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   }, []);
-  //오히려 이런 용도가 더 정확해. memo로 감싸진 컴포넌트는 메모라이징 된 상태이기에 부모가 리렌더링 된다고 하더라도, 리렌더링 되지 않는다. 그러나 함수를 props로 넘겨줬을 경우 
-  //해당 함수가 메모라이징을 통해 리렌더링이 일어나면 바뀌지 않았다는 정보를 자식 컴포넌트에게 알린다. 따라서 memo의 최적화를 더 훌륭하게 만들어준다.
+  //오히려 이런 용도가 더 정확해. memo로 감싸진 컴포넌트는 메모라이징 된 상태이기에 부모가 리렌더링 된다고 하더라도, 리렌더링 되지 않는다. 그러나 함수를 props로 넘겨줬을 경우 함수가 다시 생성되면
+  //memo로 감싼 컴포넌트가 리렌더링 된다.
+  //따라서 함수를 메모라이징하여 리렌더링이 일어나면 바뀌지 않았다는 정보를 자식 컴포넌트에게 알린다. 이를통해 memo의 최적화를 더 훌륭하게 만들어준다.
   const goFunc = useCallback(() => {
     console.log("gogo jose!")
   }, []);
