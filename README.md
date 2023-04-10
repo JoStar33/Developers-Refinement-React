@@ -1,4 +1,6 @@
 # 개발자의 섬세한 제련질 <리액트>
+![the-smurfs-blacksmith-smurf](https://user-images.githubusercontent.com/52379503/230860933-4be09789-22db-41a3-be65-443233ced587.gif)
+
 돌고돌아 결국 오게되는건 기본기 공부.
 
 탄탄한 기본기가 좋은 개발자를 만든다.
