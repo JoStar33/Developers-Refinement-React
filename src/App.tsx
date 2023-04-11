@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import './App.css';
 import Dialog from './components/Dialog';
-import UseReducer from './components/UseReducer';
+import UseTransition from './components/UseTransition';
 import { DialogContext } from './utils/DialogContext';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
     <DialogContext.Provider value={{setDialog}}>
       <Dialog text={dialogText.current} isShow={dialogShow}/>
       <div className="App">
-        <UseReducer/>
+        <UseTransition/>
       </div>
     </DialogContext.Provider>
   )
