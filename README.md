@@ -8,12 +8,10 @@
 리액트 파트에서는 아래 훅들과 라이브러리에 대해 공부하는 시간을 가진다.
 
 다소 부족하다고 판단되는 파트들을 담아봤다.
-- useCallback
-- useReducer
-- useContext
-- useTransition
-- useImperativeHandle
-- forwardRef
-- callbackRef
-- 모빅스 구체적인 사용기
-- 아토믹 디자인 시스템 적용해보기 (with tailwind)
+- useCallback✔️
+- useReducer✔️
+- useContext✔️
+- useTransition✔️
+- useImperativeHandle✔️
+- 모빅스 구체적인 사용기✔️
+- 아토믹 디자인 시스템 적용해보기 (with tailwind)⚠️(따로 파일을 만들어 구현할 예정)
