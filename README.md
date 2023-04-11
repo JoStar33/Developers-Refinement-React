@@ -16,4 +16,4 @@
 - forwardRef
 - callbackRef
 - 모빅스 구체적인 사용기
-- 아토믹 디자인 시스템 적용해보기
+- 아토믹 디자인 시스템 적용해보기 (with tailwind)
