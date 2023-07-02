@@ -40,6 +40,13 @@ const MainPage = () => {
     emailAddress: ""
   };
   const [state, dispatch] = useReducer<Reducer<UserInfo, Action>>(userInfoReducer, initialState);
+  /*
+  전역상태관리를 사용하지않고 회원가입 절처를 이루는 화면을 구현해봤습니다.
+  MainPage에 회원이라는 객체를 관리하게 만듭니다. 이때, 회원이라는 객체가 가지는 각각의 값을 useState로 따로 관리하거나 회원이라는 객체를 useState로 관리하게 된다면, 
+  지속된 상태수정 관련 코드를 작성해야합니다. 이는 무척 비효율적인 관리로, 객체의 변경이 자주 일어나며, 복잡한 변경을 계속 선언해야한다면 다음과 같이 useReducer를 사용하는게
+  좋습니다.
+  각 절차들은 route를 통해 담아두고, 절차가 성공할때마다 useNavigate를 활용해 라우팅 처리를 합니다.
+  */
   return (
     <div>
       <Routes>
