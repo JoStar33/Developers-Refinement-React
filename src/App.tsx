@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Dialog from './components/Dialog';
-import UseTransition from './components/UseTransition';
-import { DialogContext } from './utils/DialogContext';
 import MainPage from './pages/MainPage';
-import { BrowserRouter } from 'react-router-dom';
+import { DialogContext } from './utils/DialogContext';
 
 const App = () => {
   const dialogText = useRef<string>('');
