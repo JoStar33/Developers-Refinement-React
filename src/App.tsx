@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Dialog from './components/Dialog';
-import MainPage from './pages/MainPage';
+import CompoundPage from './pages/compoundComponents/CompoundPage';
+import TabPage from './pages/compoundComponents/TabPage';
 import { DialogContext } from './utils/DialogContext';
 
 const App = () => {
@@ -17,7 +18,9 @@ const App = () => {
       <Dialog text={dialogText.current} isShow={dialogShow}/>
       <div className="App">
         <BrowserRouter>
-          <MainPage/>
+          {/* <MainPage/> */}
+          <TabPage/>
+          <CompoundPage/>
         </BrowserRouter>
       </div>
     </DialogContext.Provider>
