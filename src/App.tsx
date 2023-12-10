@@ -2,9 +2,10 @@ import { useRef, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Dialog from './components/Dialog';
-import CompoundPage from './pages/compoundComponents/CompoundPage';
-import TabPage from './pages/compoundComponents/TabPage';
+// import CompoundPage from './pages/compoundComponents/CompoundPage';
+// import TabPage from './pages/compoundComponents/TabPage';
 import { DialogContext } from './utils/DialogContext';
+import AbortPage from './pages/AbortPage';
 
 const App = () => {
   const dialogText = useRef<string>('');
@@ -19,8 +20,8 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           {/* <MainPage/> */}
-          <TabPage/>
-          <CompoundPage/>
+          <AbortPage />
+          {/* <CompoundPage/> */}
         </BrowserRouter>
       </div>
     </DialogContext.Provider>
