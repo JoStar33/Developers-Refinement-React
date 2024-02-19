@@ -7,6 +7,7 @@ import Dialog from "./components/Dialog";
 import { DialogContext } from "./utils/DialogContext";
 import AbortPage from "./pages/AbortPage";
 import BroadCast from "./components/BroadCast";
+import UseDeferredValue from "./components/react18/UseDeferredValue";
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel("my_bus");
 
@@ -24,9 +25,7 @@ const App = () => {
       <Dialog text={dialogText.current} isShow={dialogShow} />
       <div className="App">
         <BrowserRouter>
-          {/* <MainPage/> */}
-          <BroadCast />
-          {/* <CompoundPage/> */}
+          <UseDeferredValue />
         </BrowserRouter>
       </div>
     </DialogContext.Provider>
