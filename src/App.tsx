@@ -9,6 +9,10 @@ import AbortPage from "./pages/AbortPage";
 import BroadCast from "./components/BroadCast";
 import UseDeferredValue from "./components/react18/UseDeferredValue";
 import Key from "./components/Key";
+import { store } from "./reduxStores";
+import { Provider } from "react-redux";
+import Counter from "./components/redux/Counter";
+
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel("my_bus");
 
@@ -25,9 +29,11 @@ const App = () => {
     <DialogContext.Provider value={{ setDialog }}>
       <Dialog text={dialogText.current} isShow={dialogShow} />
       <div className="App">
-        <BrowserRouter>
-          <Key />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Counter />
+          </BrowserRouter>
+        </Provider>
       </div>
     </DialogContext.Provider>
   );
