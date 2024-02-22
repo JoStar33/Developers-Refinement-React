@@ -1,7 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   count: 0,
+  donation: 12,
 };
 
 const counterSilce = createSlice({
@@ -11,9 +12,13 @@ const counterSilce = createSlice({
     resetCount: () => initialState,
     upCount: (state) => ({ ...state, count: state.count + 1 }),
     downCount: (state) => ({ ...state, count: state.count - 1 }),
+    setDonation: (state, action: PayloadAction<number>) => ({
+      ...state,
+      donation: action.payload,
+    }),
   },
 });
 
-export const { upCount, downCount, resetCount } = counterSilce.actions;
+export const counterAction = counterSilce.actions;
 
 export default counterSilce.reducer;
