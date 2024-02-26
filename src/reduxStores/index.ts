@@ -1,12 +1,14 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counter from "./counter";
+import user from "./user";
 
-const reducers = combineReducers({
+const reducer = combineReducers({
   counterStore: counter,
+  userStore: user,
 });
 
 export const store = configureStore({
-  reducer: reducers,
+  reducer,
 });
 
 export type AppDispatch = typeof store.dispatch;
