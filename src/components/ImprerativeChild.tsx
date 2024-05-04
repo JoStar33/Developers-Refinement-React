@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
+import React, { forwardRef, useImperativeHandle, useMemo, useRef } from "react";
 
 interface Props {
   user: User;
@@ -15,22 +15,15 @@ const ImprerativeChild = ({ user }: Props, ref: React.Ref<Ref>) => {
   }, [user]);
   const boxRef = useRef<HTMLDivElement>(null);
   useImperativeHandle(ref, () => ({
-    getUserComputedName () {
+    getUserComputedName() {
       return userName;
     },
-    setBoxStyle (color: string) {
-      if(!boxRef.current)
-        return;
+    setBoxStyle(color: string) {
+      if (!boxRef.current) return;
       boxRef.current.style.backgroundColor = color;
-    }
-  }))
-  return (
-    <div ref={boxRef}>
-      {
-        userName
-      }
-    </div>
-  );
+    },
+  }));
+  return <div ref={boxRef}>{userName}</div>;
 };
 
 export default forwardRef(ImprerativeChild);
