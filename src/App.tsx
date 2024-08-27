@@ -13,6 +13,7 @@ import { store } from "./reduxStores";
 import { Provider } from "react-redux";
 import Counter from "./components/redux/Counter";
 import KeyDuplication from "./components/KeyDuplication";
+import WrapperTest from "./components/wrapperTest";
 
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel("my_bus");
@@ -32,7 +33,7 @@ const App = () => {
       <div className="App">
         <Provider store={store}>
           <BrowserRouter>
-            <KeyDuplication />
+            <WrapperTest />
           </BrowserRouter>
         </Provider>
       </div>
