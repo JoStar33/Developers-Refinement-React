@@ -15,6 +15,7 @@ import Counter from "./components/redux/Counter";
 import KeyDuplication from "./components/KeyDuplication";
 import WrapperTest from "./components/wrapperTest";
 import RxjsPage from "./pages/RxjsPage";
+import RxjsPipe from "./components/rxjs/RxjsPipe";
 
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel("my_bus");
@@ -34,7 +35,7 @@ const App = () => {
       <div className="App">
         <Provider store={store}>
           <BrowserRouter>
-            <RxjsPage />
+            <RxjsPipe />
           </BrowserRouter>
         </Provider>
       </div>
