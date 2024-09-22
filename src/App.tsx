@@ -16,6 +16,8 @@ import KeyDuplication from "./components/KeyDuplication";
 import WrapperTest from "./components/wrapperTest";
 import RxjsPage from "./pages/RxjsPage";
 import RxjsPipe from "./components/rxjs/RxjsPipe";
+import SuspensePagePage from "./pages/SuspensePage";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel("my_bus");
@@ -30,16 +32,18 @@ const App = () => {
     dialogText.current = text;
   };
   return (
-    <DialogContext.Provider value={{ setDialog }}>
-      <Dialog text={dialogText.current} isShow={dialogShow} />
-      <div className="App">
-        <Provider store={store}>
-          <BrowserRouter>
-            <RxjsPipe />
-          </BrowserRouter>
-        </Provider>
-      </div>
-    </DialogContext.Provider>
+    <QueryClientProvider client={new QueryClient()}>
+      <DialogContext.Provider value={{ setDialog }}>
+        <Dialog text={dialogText.current} isShow={dialogShow} />
+        <div className="App">
+          <Provider store={store}>
+            <BrowserRouter>
+              <SuspensePagePage />
+            </BrowserRouter>
+          </Provider>
+        </div>
+      </DialogContext.Provider>
+    </QueryClientProvider>
   );
 };
 
