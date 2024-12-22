@@ -2,12 +2,13 @@
   "name": "developers-refinement-react",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky",
+    "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
