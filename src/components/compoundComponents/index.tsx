@@ -1,18 +1,12 @@
-import { ReactNode } from "react";
-import Option from "./Option";
+import { ReactNode } from 'react';
+import Option from './Option';
 
 interface Props {
-  children: ReactNode,
+  children: ReactNode;
 }
 
 const Select = ({ children }: Props) => {
-  return (
-    <select>
-      {
-        children
-      }
-    </select>
-  );
+  return <select>{children}</select>;
 };
 
 Select.Option = Option;

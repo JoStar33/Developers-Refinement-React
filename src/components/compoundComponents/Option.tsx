@@ -1,13 +1,10 @@
 import { ComponentProps, useId } from 'react';
 
-interface Props extends ComponentProps<'option'> {};
+type Props = ComponentProps<'option'>;
 
-const Option = ({...props}: Props) => {
+const Option = ({ ...props }: Props) => {
   const uniqueId = useId();
-  return (
-    <option key={uniqueId} {...props}>
-    </option>
-  );
+  return <option key={uniqueId} {...props}></option>;
 };
 
 export default Option;

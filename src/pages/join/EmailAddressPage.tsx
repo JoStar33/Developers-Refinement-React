@@ -6,31 +6,29 @@ import { UserInfoStatus } from '../../constants/join';
 interface Props {
   userInfo: UserInfo;
   dispatch: Dispatch<Action>;
-};
+}
 
-const EmailAddressPage = ({userInfo, dispatch}: Props) => {
+const EmailAddressPage = ({ userInfo, dispatch }: Props) => {
   const emailAddressRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   useLayoutEffect(() => {
-    if (!userInfo.phoneNumber)
-      navigate("/phone-number");
-    if (!emailAddressRef.current) 
-      return;
+    if (!userInfo.phoneNumber) navigate('/phone-number');
+    if (!emailAddressRef.current) return;
     emailAddressRef.current.value = userInfo.emailAddress;
   }, []);
+
   const handleClick = () => {
-    if(!emailAddressRef.current)
+    if (!emailAddressRef.current) return;
+    if (emailAddressRef.current.value.length < 7) {
+      alert('이메일 주소가 너무 짧아요!');
       return;
-    if(emailAddressRef.current.value.length < 7) {
-      alert("이메일 주소가 너무 짧아요!");
-      return;
-    };
+    }
     dispatch({
       type: UserInfoStatus.SET_EMAIL_ADDRESS,
-      value: emailAddressRef.current.value
+      value: emailAddressRef.current.value,
     });
-    navigate("/complete");
-  }
+    navigate('/complete');
+  };
   return (
     <div>
       <div>

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 interface Props {
   id: number;
@@ -26,7 +26,7 @@ interface MovieData {
     url: string;
     title: string;
     genres: string[];
-  }
+  };
 }
 /**
  * Abort Controller 사용기
@@ -39,7 +39,7 @@ interface MovieData {
  * 따라서 unmount가 되는 시점에 API통신을 중단시켜줘야 하는것!
  * 이럴때 return안에 abort.abort();이런식으로 코드를 작성해주면 끝.
  * 재밌는점은 마치 디바운싱처럼 동작한다는거다. 아래 예제를 10번정도 연속으로 실행하면 결과적으로 마지막 한번만 API호출이 실행된다.
- * 
+ *
  */
 export default function AbortComponent({ id }: Props) {
   const [movie, setMovie] = React.useState<MovieData>();
@@ -60,6 +60,7 @@ export default function AbortComponent({ id }: Props) {
     const abort = new AbortController();
     handleFetchMovie(id, abort);
     return () => abort.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
@@ -67,7 +68,7 @@ export default function AbortComponent({ id }: Props) {
       <p>{movie?.movie.title}</p>
     </S.AbortComponent>
   );
-};
+}
 
 const S = {
   AbortComponent: styled.div`

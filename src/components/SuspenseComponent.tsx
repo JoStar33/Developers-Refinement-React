@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
-import { useQuery } from "react-query";
-import styled from "styled-components";
+import { useQuery } from 'react-query';
+import styled from 'styled-components';
 
 export default function SuspenseComponent() {
   // setTimeout설정
   const timeoutData = () =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
       setTimeout(() => {
-        resolve("foo");
+        resolve('foo');
       }, 3000);
     });
 
@@ -16,7 +15,7 @@ export default function SuspenseComponent() {
       await timeoutData();
       return [1, 2, 3];
     },
-    queryKey: ["test"],
+    queryKey: ['test'],
     // fetching이 마무리되면 화면이 보임.
     suspense: true,
   });

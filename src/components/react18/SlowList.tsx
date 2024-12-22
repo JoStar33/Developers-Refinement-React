@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo } from 'react';
 
 interface Props {
   text: string;
@@ -6,9 +6,9 @@ interface Props {
 
 const SlowList = memo(function SlowList({ text }: Props) {
   // Log once. The actual slowdown is inside SlowItem.
-  console.log("[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />");
+  console.log('[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />');
 
-  let items = [];
+  const items = [];
   for (let i = 0; i < 250; i++) {
     items.push(<SlowItem key={i} text={text} />);
   }
@@ -16,7 +16,7 @@ const SlowList = memo(function SlowList({ text }: Props) {
 });
 
 function SlowItem({ text }: Props) {
-  let startTime = performance.now();
+  const startTime = performance.now();
   while (performance.now() - startTime < 1) {
     // Do nothing for 1 ms per item to emulate extremely slow code
   }

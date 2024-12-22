@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 
   onResetErrorBoundary = () => {
     const { onReset } = this.props;
-    onReset == null ? void 0 : onReset();
+    (!onReset ? () => {} : onReset)();
     this.reset();
   };
 
@@ -47,14 +47,7 @@ class ErrorBoundary extends React.Component<Props, State> {
         error: info,
         onResetErrorBoundary: this.onResetErrorBoundary,
       };
-      return (
-        <this.props.fallback
-          isRefresh={isRefresh}
-          onRefresh={this.reset}
-          onReset={props.onResetErrorBoundary}
-          message={message}
-        />
-      );
+      return <this.props.fallback isRefresh={isRefresh} onRefresh={this.reset} onReset={props.onResetErrorBoundary} message={message} />;
     }
     return children;
   }

@@ -14,6 +14,7 @@ const UseCallbackPrac = () => {
   const goFunc = useCallback(() => {
     console.log("gogo jose!")
   }, []);
+  
   return (
     <div>
       <input type="text" onChange={handleOnChange} />

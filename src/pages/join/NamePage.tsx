@@ -8,27 +8,25 @@ interface Props {
   userInfo: UserInfo;
 }
 
-const NamePage = ({dispatch, userInfo}: Props) => {
+const NamePage = ({ dispatch, userInfo }: Props) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   useLayoutEffect(() => {
-    if(!nameRef.current)
-      return;
+    if (!nameRef.current) return;
     nameRef.current.value = userInfo.name;
-  }, []);
+  }, [userInfo.name]);
   const handleClick = () => {
-    if(!nameRef.current)
+    if (!nameRef.current) return;
+    if (nameRef.current.value.length < 2) {
+      alert('이름이 너무 짧아요!');
       return;
-    if(nameRef.current.value.length < 2) {
-      alert("이름이 너무 짧아요!");
-      return;
-    };
+    }
     dispatch({
       type: UserInfoStatus.SET_NAME,
-      value: nameRef.current.value
+      value: nameRef.current.value,
     });
-    navigate("/age");
-  }
+    navigate('/age');
+  };
   return (
     <div>
       <div>
