@@ -20,6 +20,7 @@ import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import RelaxHandsPage from '@/components/relaxHands';
 import GlobalStyle from './styles/GlobalStyles';
+import BrowserTheme from './components/BrowserTheme';
 
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel('my_bus');
@@ -41,7 +42,7 @@ const App = () => {
         <div className="App">
           <Provider store={store}>
             <BrowserRouter>
-              <RelaxHandsPage />
+              <BrowserTheme />
             </BrowserRouter>
           </Provider>
         </div>
