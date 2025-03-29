@@ -21,7 +21,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import RelaxHandsPage from '@/components/relaxHands';
 import GlobalStyle from './styles/GlobalStyles';
 import BrowserTheme from './components/BrowserTheme';
-import Context from './components/context';
 
 //다음과 같이 채널을 형성
 const channel = new BroadcastChannel('my_bus');
@@ -43,7 +42,7 @@ const App = () => {
         <div className="App">
           <Provider store={store}>
             <BrowserRouter>
-              <Context />
+              <BrowserTheme />
             </BrowserRouter>
           </Provider>
         </div>
